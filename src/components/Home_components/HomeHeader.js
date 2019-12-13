@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import decSvg from '../assets/assets/Decoration.svg'
+import decSvg from '../../assets/assets/Decoration.svg'
 import {
       BrowserRouter,
       Route,

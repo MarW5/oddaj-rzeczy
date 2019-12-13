@@ -1,0 +1,38 @@
+.Home_Three_Columns{
+      width: 100%;
+      display: flex;
+      background-color: $color3;
+      background-image: url("../../../assets/assets/3Columns_Background.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-weight: 300;
+      color: $color2;
+      list-style: none;
+      width: 100%;
+      padding-bottom: 46px;
+      .single_element{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 33%;
+            span{
+                  font-size: 90px;
+                  text-transform: uppercase;
+            }
+            h3{
+                  font-size: 18px;
+                  text-transform: uppercase;
+
+            }
+            p{
+                  font-family: $font-alt;
+                  text-align: center;
+                  font-size: 16px;
+                  width: 50%;
+                  font-weight: 300;
+                  letter-spacing: -0.32px;
+            }
+      }
+        
+}

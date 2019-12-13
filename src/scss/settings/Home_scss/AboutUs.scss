@@ -1,0 +1,44 @@
+.AboutUs{
+      width: 100%;
+      height: 935px;
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .aboutUs_text{
+            background-color: $BgColor;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .aboutUs_text_box{
+                  width: 650px;
+                  font-size: 30px;
+                  font-weight: 400;
+                  color: $color5;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+                  text-align: center;
+                  h3{
+                        font-size: 38px;
+                        font-weight: 400;
+                        color: $color5;
+                  }
+                  .signature_box{
+                        align-self: flex-end;
+                  }
+            }
+      }
+      .aboutUs_picture{
+            width: 50%;
+            height: 100%;
+            img{
+            background-repeat: no-repeat;
+            background-size: contain;
+            }
+      }
+}

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import decSvg from '../assets/assets/Decoration.svg'
-import Icon1 from "../assets/assets/Icon-1.svg"
-import Icon2 from "../assets/assets/Icon-2.svg"
-import Icon3 from "../assets/assets/Icon-3.svg"
-import Icon4 from "../assets/assets/Icon-4.svg"
+import decSvg from '../../assets/assets/Decoration.svg'
+import Icon1 from "../../assets/assets/Icon-1.svg"
+import Icon2 from "../../assets/assets/Icon-2.svg"
+import Icon3 from "../../assets/assets/Icon-3.svg"
+import Icon4 from "../../assets/assets/Icon-4.svg"
 
 
 class FourSteps extends Component{

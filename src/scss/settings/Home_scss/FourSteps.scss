@@ -1,0 +1,48 @@
+.ForSteps{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    .ForSteps_content{
+      width: 100%;
+      height: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+      background-color: $BgColor;
+      h3{
+        color: $color4;
+        position: relative;
+
+      }
+      h3::before{
+        content: "";
+        position: absolute;
+        left: 30px;
+        bottom: -10px;
+        height: 1px;
+        width: 70px;
+        border-bottom: 1px solid $color4;
+      }
+      li{
+        width: 130px;
+        text-align: center;
+        color: $color4;
+        padding: 40px;
+        margin-left: 50px;
+      }
+    }
+    a{
+      margin-top:30px;
+      font-size: 36px;
+      color: $color5;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 0.75px solid $color4;
+      padding: 10px 40px;
+      width: 200px;
+    }
+}
