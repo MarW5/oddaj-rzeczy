@@ -1,17 +1,17 @@
-.ForSteps{
+.FourSteps{
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-    .ForSteps_content{
+    .FourSteps_content{
       width: 100%;
       height: 320px;
       display: flex;
       justify-content: center;
       align-items: center;
       list-style-type: none;
-      background-color: $BgColor;
+      background-color: $color1;
       h3{
         color: $color4;
         position: relative;

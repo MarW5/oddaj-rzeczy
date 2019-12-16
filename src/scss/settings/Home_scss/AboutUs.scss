@@ -1,12 +1,12 @@
 .AboutUs{
       width: 100%;
-      height: 935px;
+      height: 700px;
       margin-top: 80px;
       display: flex;
       justify-content: center;
       align-items: center;
       .aboutUs_text{
-            background-color: $BgColor;
+            background-color: $color1;
             width: 50%;
             height: 100%;
             display: flex;
@@ -14,7 +14,7 @@
             align-items: center;
             flex-direction: column;
             .aboutUs_text_box{
-                  width: 650px;
+                  width: 70%;
                   font-size: 30px;
                   font-weight: 400;
                   color: $color5;
@@ -23,6 +23,7 @@
                   align-items: center;
                   flex-direction: column;
                   text-align: center;
+                  
                   h3{
                         font-size: 38px;
                         font-weight: 400;
@@ -30,15 +31,21 @@
                   }
                   .signature_box{
                         align-self: flex-end;
+                        
                   }
             }
       }
       .aboutUs_picture{
             width: 50%;
-            height: 100%;
+            height: 700px;
             img{
+            width: 100%;
+            height: 100%;
+            background-position: center;
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
+            box-sizing: content-box;
+            
             }
       }
 }

@@ -1,31 +1,41 @@
 import React, { Component } from 'react';
 import Home from './components/Home';
 import LoggScreen from './components/LoggScreen';
+import ReggScreen from './components/ReggScreen';
+import LoggIn from "./components/LoggIn";
 import './scss/main.scss';
 import {
-  HashRouter,
   Route,
   Link,
   Switch,
   NavLink,
+  Router,
+  BrowserRouter,
   } from 'react-router-dom';
-import { homedir } from 'os';
+
 
 class App extends Component{
   render(){
    
-    return(
-    
-        <HashRouter>
-                        <>
-                            <Route extact path="/" component={Home} />
-                            <Switch>
-                              <Route path ='/logowanie' component={LoggScreen}/>
-                            </Switch>
-                        </>
-                        
-        </HashRouter>
+    return(     
+                    <BrowserRouter>
+                      <>
+                            <Route exact path="/" component={Home}/>
 
+                            <Switch>
+                              <Route path ='/logowanie'>
+                              <LoggScreen/>
+                              </Route>
+
+                              <Route path ='/rejestracja'>
+                              <ReggScreen/>
+                              </Route>
+                              <Route path ='/user'>
+                              <LoggIn/>
+                              </Route>
+                            </Switch>
+                      </>
+                    </BrowserRouter>             
     )
   }
 }
