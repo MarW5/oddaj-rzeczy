@@ -24,7 +24,7 @@ class App extends Component{
 
                             <Switch>
                               <Route path ='/logowanie'>
-                              <LoggScreen/>
+                              <LoggScreen />
                               </Route>
 
                               <Route path ='/rejestracja'>

@@ -1,5 +1,6 @@
 .HelpPeople{
-      margin-top:50px;
+      margin-top:55px;
+      margin-bottom:55px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -9,10 +10,11 @@
             font-size: 38px;
             font-weight: 400;
             color: $color5;
+            
       }
       .HelpPeople_description{
-            width: 640px;
-            margin-top: 80px;
+            width: 650px;
+            margin-top: 70px;
             text-align: center;
             font-size: 22px;
             color: $color5;
@@ -39,7 +41,40 @@
       }
  
       .HelpPeople_table{
-            width: 100%;
-            height: 300px;
+            margin-top:50px;
+            width: 80%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            ul{
+                  width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  
+                  li{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        margin-top:30px;
+                        padding-bottom:20px;
+                        border-bottom: 1px solid $color6;
+                        h3{   
+                              font-size: 26px;
+                        }
+                        p{
+                              font-size: 18px;
+                              font-weight: 300;
+                        }
+                        .items_right{
+                              align-self: flex-end;
+                              
+            
+                        }
+
+                  }
+            }
+            
       }
 }

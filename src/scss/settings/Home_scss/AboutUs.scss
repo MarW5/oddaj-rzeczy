@@ -26,13 +26,28 @@
                   
                   h3{
                         font-size: 38px;
+                        margin-bottom:30px;
                         font-weight: 400;
                         color: $color5;
+                  }
+                  span{
+                        margin-bottom:40px;
+                  }
+                  p{
+                        font-size: 30px;
+                        letter-spacing: -0.6px;
+                        text-align: center;
+                        line-height: 54px;
                   }
                   .signature_box{
                         align-self: flex-end;
                         
                   }
+            }
+            img{
+                  width: 100%;
+                  
+                        
             }
       }
       .aboutUs_picture{
