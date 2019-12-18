@@ -3,14 +3,9 @@ import Home from './components/Home';
 import LoggScreen from './components/LoggScreen';
 import ReggScreen from './components/ReggScreen';
 import LoggIn from "./components/LoggIn";
+import LogOut from "./components/LogOut";
 import './scss/main.scss';
-import {
-  Route,
-  Link,
-  Switch,
-  NavLink,
-  Router,
-  BrowserRouter,
+import {Route, Link, Switch, NavLink, Router, BrowserRouter,
   } from 'react-router-dom';
 
 
@@ -20,20 +15,26 @@ class App extends Component{
     return(     
                     <BrowserRouter>
                       <>
-                            <Route exact path="/" component={Home}/>
+                          <Route exact path="/" component={Home}/>
 
-                            <Switch>
+                          <Switch>
                               <Route path ='/logowanie'>
-                              <LoggScreen />
+                                <LoggScreen />
                               </Route>
 
                               <Route path ='/rejestracja'>
-                              <ReggScreen/>
+                                <ReggScreen/>
                               </Route>
                               <Route path ='/user'>
-                              <LoggIn/>
+                                <LoggIn/>
                               </Route>
-                            </Switch>
+
+                              <Route path ='/wylogowano'>
+                                <LogOut/>
+                              </Route>
+
+                              
+                          </Switch>
                       </>
                     </BrowserRouter>             
     )

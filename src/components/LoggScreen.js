@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import decSvg from '../assets/assets/Decoration.svg'
 import HomeHeader from './Home_components/HomeHeader';
-import Firebase from "./Firebase"
-
 
 
 class LoggScreen extends Component{
@@ -38,59 +36,12 @@ class LoggScreen extends Component{
                   return false;
             }
 
-            Firebase({
-                  email: email,
-                  password: password
-            }).then(user =>{
-                  this.setState({
-                        user,
-                        isLogged: true
-                  })
-            }).catch(err =>{
-                  this.setState({
-                        errors: [err],
-                        isLogged :true
-                  });
-            });
+           
       };
 
       
       render(){
 
-//             const {isLogged, email, password, errors, user} =this.state;
-            
-//                               if( isLogged ===false){
-//                                     return (
-//                                           <>
-//                                           <HomeHeader/>
-//                                     <div className="Logg_Form">
-//                                           <h2>Zaloguj się</h2>
-//                                           <span><img alt="decoration icon" src={decSvg}/></span>
-//                                           <div className="Logg_Form_date">
-//                                                 <p>Email</p>
-//                                                 <input type={"email"} name={"email"} value={this.state.email} onChange={this.handleChange}/>
-//                                                 <div style={{color: "red"}}>
-//                                                       {errors.map((error, i) => <p key={i}>{error}</p>)}
-//                                                 </div>
-//                                                 <p>Hasło</p>
-//                                                 <input type={"password"} name={"password"}/>
-
-//                                           </div>
-//                                           <div className="Logg_Form_btn">
-//                                                 <a href="/rejestracja">Załóż konto</a>
-//                                                 <a href="/user" onChange={this.handleFormSubmit}>Zaloguj się</a>
-//                                           </div>
-//                                           </div>
-//                                     </>
-//                               )
-//                          }
-                 
-            
-//             return <h3>zalogowany</h3>
-                  
-//       }
-                        
-// }
             return(
                   <>
                         <HomeHeader/>
@@ -115,9 +66,6 @@ class LoggScreen extends Component{
       
       } 
 }
-
-
-
 
 
 export default LoggScreen;

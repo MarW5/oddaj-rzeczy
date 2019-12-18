@@ -51,18 +51,27 @@
                         align-items: center;
                         justify-content: center;
                               .form_both{
-                                    width: 50%;  
+                                    width: 50%; 
+
+                                    .Error_msg{
+                                          margin-top:10px;
+                                          font-size: 12px;
+                                          font-weight: 300;
+                                          color: red;
+                                          width: 100%;
+                                    } 
                                     &:first-of-type{
                                           margin-right: 10px;
                                     }
                               
                               p{    
                                     font-weight: 600;
-                                    margin-bottom:10px;
+                                    
                               }
                        
                         }
                         input{
+                              margin-top:10px;
                               width: 100%;
                               border: none;
                               border-bottom: 1px solid $color4;
@@ -84,7 +93,15 @@
                               border: none;
                               border-bottom: 1px solid $color4;
                               font-family: $font-base
-                   }
+                        }
+                        .Error_msg{
+                              margin-top:10px;
+                              font-size: 12px;
+                              font-weight: 300;
+                              color: red;
+                              width: 100%;
+                        } 
+                   
 
              }
             }
