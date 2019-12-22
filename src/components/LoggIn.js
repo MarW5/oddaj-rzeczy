@@ -22,7 +22,7 @@ class LoggIn extends Component{
            <div className="Header_menu">
                         <ul className="Header_logg_option">
                               <li><p>Cześć krzysztof@gmail.com</p></li>
-                              <a href="/logowanie"><p>ODDAJ RZECZY</p></a>
+                              <a href="/oddaj-rzeczy"><p>ODDAJ RZECZY</p></a>
                               <li><Link to="/wylogowano">Wyloguj</Link></li>
                         </ul>
 

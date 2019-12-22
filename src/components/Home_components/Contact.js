@@ -12,9 +12,11 @@ class Contact extends Component{
         error_name : [],
         error_email : [],
         error_msg : [],
+        sukcess_msg: [],
         isLogged: false
 
     };
+    
     
     
     handleChange = e => {
@@ -26,13 +28,13 @@ class Contact extends Component{
 
     handleFormSubmit = e => {
         e.preventDefault();
-        
+
         const obj = {
-            name : "name",
-            email : "email",
-            message : "message"
+            name : this.state.name,
+            email : this.state.email,
+            message : this.state.message
         }
-        
+
         fetch('https://fer-api.coderslab.pl/v1/portfolio/contact',{
                 method: "POST",
                 headers: {
@@ -47,8 +49,9 @@ class Contact extends Component{
         }).catch(error =>{
             console.log(error)
         })
+        
     
-        const {name, email, message, error_email, error_name, error_msg} = this.state;
+        const {name, email, message, error_email, error_name, error_msg,sukcess_msg} = this.state;
 
         function validateEmail(email) {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -57,46 +60,53 @@ class Contact extends Component{
     
         if (name.length < 3 ) {
             error_name.push("Podane imię jest nieprawidłowe!");
-            
+            console.log(sukcess_msg)
         }
     
-        if (validateEmail(email)) {
+        if (validateEmail(email) === false) {
             error_email.push("Podany email jest nieprawidłowy!");
             
         }
         if (message.length < 120) {
             error_msg.push("Wartość musi mieć conajmniej 120 znaków!");
-            
+            console.log(error_msg.length)
           }
+          
     
         if (error_msg.length !== "" || error_email.length !== "" ||  error_name.length !== "") {
-          this.setState({
+            this.setState({
             isLogged: false
+            
           });
           return false;
-        }  
-
+        }
         
-    }
-       
-    render() {
-        const {isLogged, name, email, message, error_msg, error_email, error_name} = this.state;
-
-       
+        if(name.length >3 && validateEmail(email) === true && message.length > 120){
+            sukcess_msg.push("Wysłano")
+            console.log(sukcess_msg)
+            this.setState({
+                isLogged: true
                 
-        
+              });
+              return true
+        }
 
-        if(isLogged === false){
-            
+    //    zrobic fetcha w miejscu gdzie pola input są juz poddane validacji dodać wiadomość sukcess, tylko 1 return
+    
+}
+     
+    render() {
+        const {name, email, message, error_msg, error_email,sukcess_msg, error_name} = this.state;
 
             return(
-                
-            
+                 
                 <div className="Contact">
+                    
                     <img alt="background" className="Bg_clothes" src={BgContact}/>  
-                    <div  className="Contact_content ">
+                    <div className="Contact_content ">
                         <h3>Skontaktuj się z nami</h3>
                         <span><img alt="decoration_element" src={decSvg}/></span>
+                        <p className=" Sukcess_msg">{sukcess_msg.pop()}</p>
                         <div className="form_box">
                         <div className="form_name_email">
                             <div className="form_both">
@@ -122,46 +132,8 @@ class Contact extends Component{
                 </div>
                 
             
-            )
-
-        }
-
-        return(
-
-            <div className="Contact">
-            <img alt="background" className="Bg_clothes" src={BgContact}/>  
-            <div className="Contact_content">
-                <h3>Skontaktuj się z nami</h3>
-                <span><img alt="decoration_element" src={decSvg}/></span>
-
-                <p>Wiadomość została wysłana! Wkrótce się skontaktujemy.</p>
-
-                <div className="form_box">
-                <div className="form_name_email">
-                    <div className="form_both">
-                        <p>Wpisz swoje imię:</p>
-                        <input onChange={this.handleChange} name="name" value={name} type='text'placeholder="Krzysztof"/>
-                    </div>
-                    <div className="form_both" >
-                        <p>Wpisz swój email:</p>
-                        <input onChange={this.handleChange} name="email" value={email} type="email" placeholder="abc@xyz.pl"/>
-                        
-                    </div>
-                </div>
-                <div className="massage_toUs">
-                    <p>Wpisz swoją wiadomość:</p>
-                    <textarea onChange={this.handleChange} value={message} name="message" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea>
-                </div>
-                <button className="Form_btn" onSubmit={this.handleFormSubmit} >Wyślij</button>
-                </div>
-            </div>  
-            <Footer/>
-        </div>
-              
-        )
-        
-    }
-    
+                )
+        }  
 }
 
 export default Contact;
