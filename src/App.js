@@ -4,7 +4,7 @@ import LoggScreen from './components/LoggScreen';
 import ReggScreen from './components/ReggScreen';
 import LoggIn from "./components/LoggIn";
 import LogOut from "./components/LogOut";
-import FormScreen from "./components/FormScreen"
+import FormScreen from "./components/Form_components/FormScreen"
 import './scss/main.scss';
 import {Route, Link, Switch, NavLink, Router, BrowserRouter,
   } from 'react-router-dom';
@@ -36,6 +36,7 @@ class App extends Component{
                               <Route path ='/oddaj-rzeczy'>
                                 <FormScreen/>
                               </Route>
+                             
                               
                           </Switch>
                       </>
