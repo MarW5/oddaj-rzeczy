@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link as ScrollLink, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import {Link, Route, NavLink, } from 'react-router-dom';
-import decSvg from '../assets/assets/Decoration.svg'
+import decSvg from '../../assets/assets/Decoration.svg'
 
 
 class LogInNav extends Component{

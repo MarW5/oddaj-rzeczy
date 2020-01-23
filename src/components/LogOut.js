@@ -4,6 +4,7 @@ import decSvg from '../assets/assets/Decoration.svg'
 
 
 class LogOut extends Component{
+      
       render(){
             return(
                   <>
@@ -11,7 +12,8 @@ class LogOut extends Component{
                         <div className="LogOut">
                               <h2>Wylogowanie nastapiło pomyślnie!</h2>
                               <span><img src={decSvg}/></span>
-                              <a href= "/">Strona główna</a>
+                              <a href= "/" >Strona główna</a>
+                              
                         </div>
                   
                   </>

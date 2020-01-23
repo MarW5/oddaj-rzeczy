@@ -5,6 +5,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      margin-top: 80px;
       
       h2{
             font-size: 40px;
@@ -17,18 +18,25 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-evenly;
             p{
                   width: 250px;
                   font-weight: 900;
+                  padding-top: 20px;
             }
             input{
                   width: 250px;
+                  height: 30px;
                   border:none;
                   border-bottom: 0.75px solid $color6 ;
                   background-color: $color1;
+                  margin-bottom: 20px;
+
 
             }     
+            .red_alert{
+                  border-bottom: 0.75px solid red;
+            }
       }
       .Reg_Form_btn{
             width: 30%;
@@ -49,3 +57,12 @@
             }
       }
 }
+
+// .Error_msg{
+//       color: red;
+//       font-size: 14px;
+//       font-weight: 300;
+//       padding: 10px 5px;
+//       margin-bottom: 5px;
+// }
+

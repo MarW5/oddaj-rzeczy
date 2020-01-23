@@ -86,7 +86,7 @@
       justify-content: space-around;
       align-self: center;
       li{
-            border: 1px solid $color6;
+            
             box-shadow: 0 1px 1px 1px $color1;
             padding: 10px;
             margin-top:10px; 
@@ -94,5 +94,5 @@
 }
 
 .Btn_clicked{
-    background-color: pink;  
+      border: 1px solid $color6;
 }

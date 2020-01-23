@@ -82,17 +82,19 @@ class Contact extends Component{
         }
         
         if(name.length >3 && validateEmail(email) === true && message.length > 120){
+            
             sukcess_msg.push("Wysłano")
             console.log(sukcess_msg)
             this.setState({
-                isLogged: true
+                isLogged: true,
+                error_msg: [],
+                error_email: [],
+                error_name: [],
                 
               });
               return true
-        }
-
-    //    zrobic fetcha w miejscu gdzie pola input są juz poddane validacji dodać wiadomość sukcess, tylko 1 return
-    
+        }  
+        console.log(obj);
 }
      
     render() {

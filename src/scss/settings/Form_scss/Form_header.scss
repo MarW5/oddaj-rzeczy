@@ -15,10 +15,22 @@
 .Header_form_banner{
       display: flex;
       flex-direction: column;
-      
+      .Header_menu_log{
+            .User_email{
+                  font-size: 14px;
+                  font-weight: bold;
+
+            }
+            li{
+                  padding: 5px 10px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+            }
+      }
 
       .Header_form{
-            width: 100%;
+            width: 80%;
             height: 70%;
             margin-top: 80px;
             justify-content: center;
@@ -66,6 +78,13 @@
                               align-items: center;
                               color: $color5;
                               margin-top: 50px;
+                              position: relative;
+                              margin-right: 80px;
+                              .number_steps{
+                                    font-size: 34px;
+                                    font-weight: 300;
+
+                              }
                               p{    
                                     width: 80px;
                                    z-index: 2; 
@@ -74,16 +93,15 @@
                                   
                                    
                               }
-                              
-                              
-                              
+                                                      
                               &::after{
                                     content: "";
-                                    width: 110px;
-                                    height: 110px;
+                                    width: 140px;
+                                    height: 140px;
                                     border:0.75px solid $color5;
                                     transform: rotate(45deg);
-                                    z-index: 1;
+                                    position: absolute;
+                                    
                               }
                         }
 
@@ -94,4 +112,7 @@
             
             
       }
+}
+.User_email{
+      
 }

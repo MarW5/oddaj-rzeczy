@@ -1,0 +1,79 @@
+
+.Form_box{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .text_local{
+            font-size: 36px;
+      }
+}
+
+.Numbers_of_bags{
+      width: 100%;
+      height: 200px;
+      margin-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      p{
+            text-align: center;
+            margin: 0px;
+      }
+
+}
+.Select_content{
+      width: 400px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      
+      .Chosse_numbers{
+            width: 220px;
+            height: 50px;
+            margin-left: 10px;
+            padding-left: 15px;
+            font-size: 24px;
+            border:0.75px solid $color5;
+            -webkit-appearance: none;
+            -moz-appearance:none;
+            appearance: none;
+            background-color: #ececea!important;
+            
+            
+            background: url("../../../assets/assets/Icon-Arrow-Down.svg") 96% / 15% no-repeat #EEE;
+            &:hover{
+                  background: url("../../../assets/assets/Icon-Arrow-Up.svg") 96% / 15% no-repeat #EEE;
+            }
+
+            // option{
+            
+            //       font-weight: 300;
+            //       margin-left: 10px;
+            // }
+      }
+}
+
+
+.buttons_step2{
+      width: 100%;
+      height: 90px;
+      align-self: flex-end;
+      margin-top:20px;
+      a{
+            width: 180px;
+            height: 80px;
+            padding: 15px 30px;
+            text-align: center;
+            border: 0.75px solid $color5;
+            cursor:pointer;
+            &:first-of-type{
+                  margin-right: 50px;
+            }
+      }
+      
+
+
+}
