@@ -23,6 +23,7 @@ class LoggScreen extends Component{
 
 
       handleFormSubmit= e =>{
+           
             e.preventDefault();
             myFirebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((u)=>{
@@ -35,12 +36,14 @@ class LoggScreen extends Component{
                         error: "Niepoprawny e-mail lub hasło" ,
                         isTrue: false 
                   })
-                console.log(error);
+            //     console.log(error);
               });
 
               
            
       };
+
+      
 
 
       render(){
@@ -65,7 +68,7 @@ class LoggScreen extends Component{
                                     
                                           <div className="Logg_Form_btn">
                                                 <a href="/rejestracja">Załóż konto</a>
-                                                <a  onClick={this.handleFormSubmit} href="/oddaj-rzeczy">Zaloguj się</a>
+                                                <a onClick={this.handleFormSubmit} href="/oddaj-rzeczy">Zaloguj się</a>
                                           </div>
                                     </div>    
                         </>

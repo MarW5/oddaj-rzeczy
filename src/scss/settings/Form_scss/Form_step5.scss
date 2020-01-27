@@ -6,13 +6,18 @@
             font-size: 24px;
       }
 .summary_box{
-      width: 50%;
+      width: 60%;
       font-size: 24px;
       font-weight: 500;
       margin-top: 20px;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       padding: 10px;
+      span{
+            padding: 5px;
+            height: 33px;
+      }
 
 
       img{

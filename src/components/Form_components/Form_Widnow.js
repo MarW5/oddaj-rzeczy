@@ -4,25 +4,18 @@ import Form_step3 from "../Form_components/Form_step3"
 import Form_step4 from "../Form_components/Form_step4"
 import Form_step5 from "../Form_components/Form_step5"
 import Form_step6 from "../Form_components/Form_step6"
-import myFirebase from "../../Firebase/fbconfig"
-import firebase from "firebase";
+// import myFirebase from "../../Firebase/fbconfig"
+// import firebase from "firebase";
 
 
 class Form_Window extends Component{
       
             state={
-                  isActive: 3,
+                  isActive: 1,
                   valueRadio: "",
                   valueBags:"",
                   valueCity:"",
                   valueCheckbox: [],
-                  isChecked : [
-                        {boxOne: false},
-                        {boxTwo: false},
-                        {boxTree: false},
-                        {boxFour: false},
-                        {boxFive: false}
-                  ],
                   valueNameOrganization:"",
                   street:"",
                   city:"",
@@ -101,33 +94,31 @@ class Form_Window extends Component{
                        
                   };  
 
+
+                 
                   handleChangeStep3ValueCheckbox = e => {
+                         const removeItem =(e)=>{
+                              let newArray = this.state.valueCheckbox;
+                              let index = newArray.indexOf(e.target.value)
+                              newArray.splice([index])  
+                        }
+
                         const {valueCheckbox}= this.state
+                        
                         if(e.target.checked){
                               this.setState({
                                     valueCheckbox: [...this.state.valueCheckbox,e.target.value],
                               },()=>{
                                     console.log(this.state.valueCheckbox)
                               })
-                        }else if (e.target.checked === valueCheckbox.value){
+                        }else if (removeItem(e)){
                               this.setState({
                                     valueCheckbox: []
                               })
                         }
-                        
-
-                        // const {valueCheckbox}= this.state
-                        // let list = Array.from(this.state.valueCheckbox)
-                        // list.push(e.currentTarget.value)
-                        // let newArray = list.filter(function(item ,pos, self){
-                        //        return self.indexOf(item) === pos
-                        //  })
-                        // this.setState({
-                        //       valueCheckbox: newArray,
-                              
-                        // });
-                        
+                      
                         console.log(e.currentTarget)
+                        console.log(valueCheckbox)
                         
                   };  
                   
@@ -399,9 +390,7 @@ class Form_Window extends Component{
                   valueCity={this.state.valueCity}
                   valueCheckbox={this.state.valueCheckbox} 
                   valueNameOrganization = {this.state.valueNameOrganization}
-                  isChecked = {this.state.isChecked}
-                       
-                        
+     
                   />
             }else if (this.state.isActive ===4){
                   return <Form_step4
@@ -413,7 +402,6 @@ class Form_Window extends Component{
                   handleChangeStep4time = {this.handleChangeStep4time}
                   handleChangeStep4note = {this.handleChangeStep4note}
                   handleClickFormStepNext4 = {this.handleClickFormStepNext4}
-                  // handleValidationForm4 = {this.handleValidationForm4}
                   handleFormPrevious4 = {this.handleFormPrevious4}
                   street={this.state.street}
                   city={this.state.city}
@@ -435,7 +423,8 @@ class Form_Window extends Component{
                   valueRadio={this.state.valueRadio}
                   valueBags = {this.state.valueBags }
                   valueCity = {this.state.valueCity}
-                  valueCheckbox = {this.state.valueCheckbox}
+                  valueCheckbox = {this.state.valueCheckbox.map((item)=>
+                       <span>{item}</span> )}
                   valueNameOrganization = {this.state.valueNameOrganization}
                   street= {this.state.street}
                   city = {this.state.city}

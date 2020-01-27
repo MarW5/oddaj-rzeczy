@@ -5,6 +5,10 @@ import Icon4 from "../../assets/assets/Icon-4.svg"
 class Form_step5 extends Component{
 
       render(){
+            // const {valueCheckbox}= this.props
+            // const checkboxArray = valueCheckbox.map((item)=>{
+            //       <p>{item}</p>
+            // })
             return (
                   
                   <div className="Form_content">
@@ -17,7 +21,7 @@ class Form_step5 extends Component{
                               <h3 className="text_local">Podsumowanie Twojej darowizny</h3>
                               <div className="summary">
                                     <p>Oddajesz:</p>
-                                    <span className="summary_box"><img alt="T_shirt" src={Icon1}/> { this.props.valueBags > 1 ? this.props.valueBags + " worki" : this.props.valueBags + " worek"} , {this.props.valueRadio}, {this.props.valueCheckbox}</span>
+                                    <span className="summary_box"><img alt="T_shirt" src={Icon1}/><span> { this.props.valueBags > 1 ? this.props.valueBags + " worki" : this.props.valueBags + " worek"}</span><span>{this.props.valueRadio +","}</span>{this.props.valueCheckbox}</span>
                                     <span className="summary_box"><img alt="courier" src={Icon4}/> dla lokalizacji: {this.props.valueCity}</span>
                               </div>
                               <div className="information">

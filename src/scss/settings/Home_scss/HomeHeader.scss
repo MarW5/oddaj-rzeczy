@@ -27,9 +27,11 @@
                   justify-content: space-between;
                   align-items: center;
                   li{
+                        text-decoration: none;
                         padding:10px 20px;
                       a{
                         text-decoration: none;
+                        color:$color5;
                       }  
                         &:hover{
                               border:1px solid $color4;

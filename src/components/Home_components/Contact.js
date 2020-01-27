@@ -45,54 +45,69 @@ class Contact extends Component{
         }).then( response => {
             if(response.ok === true){
                 console.log(response)
+                this.setState({
+                    sukcess_msg: "Dziękujemy za przesłanie wiadomości",
+                    error_msg: [],
+                    error_email: [],
+                    error_name: [],
+                    name:"",
+                    email:"",
+                    message:""
+
+                })
                 }
         }).catch(error =>{
             console.log(error)
         })
         
     
-        const {name, email, message, error_email, error_name, error_msg,sukcess_msg} = this.state;
+        const {name, email, message,error_msg ,error_email, error_name} = this.state;
+        
+        function validateName(name){
+            let letters = /^[A-Za-z]+$/
+            return letters.test(String(name).toLowerCase());
+        }
+        
 
         function validateEmail(email) {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }
     
-        if (name.length < 3 ) {
-            error_name.push("Podane imię jest nieprawidłowe!");
-            console.log(sukcess_msg)
+        if (name.length < 3 || validateName(name) === false) {
+            this.setState({
+                error_name: "Podane imię jest nieprawidłowe!"
+            })
+            
         }
     
         if (validateEmail(email) === false) {
-            error_email.push("Podany email jest nieprawidłowy!");
+            this.setState({
+                error_email: "Podany email jest nieprawidłowy!"
+            })
             
         }
         if (message.length < 120) {
-            error_msg.push("Wartość musi mieć conajmniej 120 znaków!");
-            console.log(error_msg.length)
-          }
-          
-    
-        if (error_msg.length !== "" || error_email.length !== "" ||  error_name.length !== "") {
             this.setState({
-            isLogged: false
-            
-          });
-          return false;
-        }
-        
-        if(name.length >3 && validateEmail(email) === true && message.length > 120){
-            
-            sukcess_msg.push("Wysłano")
-            console.log(sukcess_msg)
+                error_msg: "Wartość musi mieć conajmniej 120 znaków!"
+            })
+          }if(name.length >3 && validateName(name) === true){
             this.setState({
-                isLogged: true,
-                error_msg: [],
-                error_email: [],
                 error_name: [],
+              });
+
+        }if(validateEmail(email) === true){
+            this.setState({
+                error_email: [],
                 
               });
-              return true
+
+        }if (message.length > 120 ) {
+            this.setState({
+                error_msg: [],
+                
+              });
+            
         }  
         console.log(obj);
 }
@@ -108,24 +123,24 @@ class Contact extends Component{
                     <div className="Contact_content ">
                         <h3>Skontaktuj się z nami</h3>
                         <span><img alt="decoration_element" src={decSvg}/></span>
-                        <p className=" Sukcess_msg">{sukcess_msg.pop()}</p>
+                        <p className=" Sukcess_msg">{sukcess_msg}</p>
                         <div className="form_box">
                         <div className="form_name_email">
                             <div className="form_both">
                                 <p>Wpisz swoje imię:</p>
                                 <input onChange={this.handleChange} name="name" value={name} type='text'placeholder="Krzysztof"/>
-                                <p className="Error_msg">{error_name.pop()}</p>
+                                <p className="alert_error">{error_name}</p>
                             </div>
                             <div className="form_both" >
                                 <p>Wpisz swój email:</p>
                                 <input onChange={this.handleChange} name="email" value={email} type="email" placeholder="abc@xyz.pl"/>
-                                <p className="Error_msg">{error_email.pop()}</p>
+                                <p className="alert_error">{error_email}</p>
                             </div>
                         </div>
                         <div className="massage_toUs">
                             <p>Wpisz swoją wiadomość:</p>
                             <textarea onChange={this.handleChange} value={message} name="message" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea>
-                            <p className="Error_msg">{error_msg.pop()}</p>
+                            <p className="alert_error">{error_msg}</p>
                         </div>
                         <button className="Form_btn" onClick={this.handleFormSubmit}>Wyślij</button>
                         </div>
