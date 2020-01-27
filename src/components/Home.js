@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import HomeHeader from "./Home_components/HomeHeader"
 import HomeBanner from "./Home_components/HomeBanner"
 import HomeThreeColumns from "./Home_components/HomeTreeColumns"
 import FourSteps from "./Home_components/FourSteps"

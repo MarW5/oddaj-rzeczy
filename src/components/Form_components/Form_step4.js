@@ -14,26 +14,32 @@ class Form_step4 extends Component{
                               <h3 className="text_local">Podaj adres oraz termin odbioru rzecz przez kuriera</h3>
                               <div className="information">
                                     <div className="information_content">
+
                                           <p className="information_content_text">Adres odbioru:</p>
+
                                           <label className="client_info">
                                                 <p>Ulica</p>
                                                 <input onChange={this.props.handleChangeStep4street} type="tekst" name="name" value={this.props.street}/>
                                           </label>
+                                          <p className="error_message_label">{this.props.error_street}</p>
 
                                           <label className="client_info">
                                                 <p>Miasto</p>
                                                 <input onChange= {this.props.handleChangeStep4City} type="tekst" name="name" value={this.props.city}/>
                                           </label>
+                                          <p className="error_message_label">{this.props.error_city}</p>
 
                                           <label className="client_info">
                                                 <p>Kod pocztowy</p>
-                                                <input onChange = {this.props.handleChangeStep4postCode} type="tekst" name="name" value={this.props.postCode}/>
+                                                <input placeholder="00-000" onChange = {this.props.handleChangeStep4postCode} type="tekst" name="name" value={this.props.postCode}/>
                                           </label>
+                                          <p className="error_message_label">{this.props.error_postCode}</p>
 
                                           <label className="client_info">
                                                 <p>Numer telefonu</p>
                                                 <input onChange = {this.props.handleChangeStep4phone} type="tekst" name="name" value= {this.props.phone}/>
                                           </label>
+                                          <p className="error_message_label">{this.props.error_phone}</p>
 
                                     </div>
 
@@ -43,6 +49,7 @@ class Form_step4 extends Component{
                                                 <p>Data</p>
                                                 <input onChange = {this.props.handleChangeStep4date} type="date" name="name" value = {this.props.date}/>
                                           </label>
+                                          <p className="error_message_label">{this.props.error_date}</p>
 
                                           <label className="client_info">
                                                 <p>Godzina</p>
@@ -57,9 +64,9 @@ class Form_step4 extends Component{
                                     </div>
                               </div>  
 
-                                    <label className="buttons_step2">
+                                    <label className="buttons_step3">
                                                 <a onClick={this.props.handleFormPrevious4}>Wstecz</a>
-                                                <a onClick={this.props.handleClickFormStepNext4}>Dalej</a>
+                                                <a onClick = {this.props.handleClickFormStepNext4}>Dalej</a>
                                     </label>
                         </div>
 

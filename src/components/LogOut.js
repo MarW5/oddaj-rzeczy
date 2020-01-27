@@ -8,11 +8,13 @@ class LogOut extends Component{
       render(){
             return(
                   <>
-                        <HomeHeader/>
+                        <div className="Home_Banner_LoggScreen">
+                                    <HomeHeader/>
+                        </div>
                         <div className="LogOut">
                               <h2>Wylogowanie nastapiło pomyślnie!</h2>
-                              <span><img src={decSvg}/></span>
-                              <a href= "/" >Strona główna</a>
+                              <span><img alt="decoration line" src={decSvg}/></span>
+                              <a href= "/">Strona główna</a>
                               
                         </div>
                   

@@ -3,8 +3,6 @@ import decSvg from '../../assets/assets/Decoration.svg'
 import HomeHeader from '../Home_components/HomeHeader';
 
 import myFirebase from "../../Firebase/fbconfig"
-import FormScreen from "../Form_components/FormScreen"
-import {Redirect} from 'react-router-dom';
 import LoggIn from '../LoggIn';
 
 
@@ -27,7 +25,7 @@ class LoggScreen extends Component{
       handleFormSubmit= e =>{
             e.preventDefault();
             myFirebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then((u)=>{ console.log("zalogowano") 
+            .then((u)=>{
             this.setState({
                   error: " ",
                   isTrue: true  

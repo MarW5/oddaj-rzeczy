@@ -8,7 +8,7 @@ import LogOut from "./components/LogOut";
 import FormScreen from "./components/Form_components/FormScreen"
 import './scss/main.scss';
 
-import {Route, Link, Switch, NavLink, Router, BrowserRouter, Redirect} from 'react-router-dom';
+import {Route, Switch, BrowserRouter, Redirect} from 'react-router-dom';
 
 import myFirebase from "./Firebase/fbconfig"
 
@@ -31,24 +31,27 @@ class App extends Component{
     myFirebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ user });
-       localStorage.setItem('user', user.uid);
-       console.log(user.uid)
+      //  localStorage.setItem('user', user.uid);
+      //  console.log(user.uid)
       } else {
         this.setState({ user: null });
-       localStorage.removeItem('user');
+      //  localStorage.removeItem('user');
       }
     });
   }
 
+
+
   render(){
-    console.log(this.state.user)
     return(     
                 <>
                   
                       <BrowserRouter>
                       
                         
-                          <Route exact path="/" component={Home} />
+                          <Route exact path="/">  
+                            {this.state.user ? <LoggIn user={this.state.user.email}/> : <Home/>}
+                          </Route>
 
                             <Switch>
                                 <Route path ='/logowanie'>
@@ -58,19 +61,23 @@ class App extends Component{
 
                                 <Route path ='/rejestracja'>
                                   <ReggScreen/>
+                                  
                                 </Route>
                                 
-                                <Route path ='/user'>
+                                {/* <Route path ='/user'>
                                   <LoggIn/>
-                                </Route>
+                                </Route> */}
 
                                 <Route path ='/wylogowano'>
                                   <LogOut/>
                                 </Route>
 
-                                <Route path ='/oddaj-rzeczy'>
-                                  <FormScreen user={this.state.user.email}/>
-                                  {this.state.user ? (<LoggIn/>) : (<LoggScreen/>)}
+                                {/* <Route path ='/user'>
+                                  {this.state.user ? <LoggIn user={this.state.user.email}/> : <Redirect to="/logowanie"></Redirect> }
+                                </Route> */}
+
+                                <Route path ='/oddaj-rzeczy'>                              
+                                  {this.state.user ? <FormScreen user={this.state.user.email}/> : <Redirect to="/logowanie"></Redirect> }
                                 </Route>
                                   
                             </Switch>

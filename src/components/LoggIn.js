@@ -5,7 +5,7 @@ import FourSteps from "./Home_components/FourSteps"
 import AboutUs from "./Home_components/AboutUs"
 import HelpPeople from "./Home_components/HelpPeople"
 import Contact from "./Home_components/Contact"
-import Form_header from "./Form_components/Form_header"
+
 
 
 
@@ -14,7 +14,7 @@ class LoggIn extends Component{
     
     return (
       <>
-          <Form_header/>
+          <LogInNav user={this.props.user}/>
           <HomeThreeColumns/>
           <FourSteps/>
           <AboutUs/>

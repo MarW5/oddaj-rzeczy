@@ -7,7 +7,7 @@ import Contact from "../Home_components/Contact"
 
 class FormScreen extends Component{
       render(){
-            const {user}= this.props
+            // const {user}= this.props
             return(
 
                   <>

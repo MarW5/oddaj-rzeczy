@@ -11,7 +11,7 @@ class Form_step6 extends Component {
                         <div className="Form_box box_form">
                               <div className="box_form_end">  
                                     <h3 className="end_form">Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie informacje o odbiorze.</h3>
-                                    <span><img src={decSvg}/></span>
+                                    <span><img alt="decoration line" src={decSvg}/></span>
                               </div>
                         </div>
                   </div>

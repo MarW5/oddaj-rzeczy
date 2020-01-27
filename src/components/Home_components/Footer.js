@@ -7,7 +7,7 @@ class Footer extends Component{
         return(
             <div className="Footer_Content">
                 <p>Copyright by Coders Lab</p>
-                <span><img alt="Facebook" src={fbIcon}/><img alt="Instagram" src={instIcon}/></span>
+                <span><a href="https://www.facebook.com" target="_blank"><img alt="Facebook" src={fbIcon}/></a><a href="https://www.instagram.com" target="_blank"><img alt="Instagram" src={instIcon}/></a></span>
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link as ScrollLink,animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
 import {Link, NavLink, } from 'react-router-dom';
 import decSvg from '../../assets/assets/Decoration.svg'
 import myFirebase from "../../Firebase/fbconfig"
@@ -19,7 +19,6 @@ class Form_Header extends Component{
                   border:'1px solid $color4'
             };
 
-            const {user}= this.props
             
             return(
       <nav className="Home_Header">
@@ -27,14 +26,14 @@ class Form_Header extends Component{
             <div className="Banner_background"></div>
                          
             <div className="Header_form_banner">
-            <div className="Header_menu Header_menu_log">
+            <div className="Header_menu ">
                         <ul className="Header_logg_option">
-                              <li className="User_email"><p> Cześć </p>{this.props.user}</li>
-                              <li><a href="/oddaj-rzeczy"><p>ODDAJ RZECZY</p></a></li>
+                              <li className="User_email"><p> Cześć {this.props.user}</p></li>
+                              <li><Link to="/oddaj-rzeczy">ODDAJ RZECZY</Link></li>
                               <li onClick={this.logout}><Link to="/wylogowano">Wyloguj</Link></li>
                         </ul>
 
-                              <ul className="Header_logg_option Header_menu_nav">
+                              <ul className=" Header_menu_nav">
                                     <li><NavLink exact to="/" activeStyle={activeStyle}>Start</NavLink></li>
                                     <li><ScrollLink activeClass="active" to="FourSteps" spy={true} smooth={true} duration={500}>O co chodzi?</ScrollLink></li>
                                     <li><ScrollLink activeClass="active" to="AboutUs" spy={true} smooth={true} duration={500}>O nas</ScrollLink></li>

@@ -14,7 +14,6 @@ class Form_step3 extends Component{
 
       
 
-
       render(){
             return(
                   <div className="Form_content">
@@ -45,9 +44,10 @@ class Form_step3 extends Component{
                                                                         
                                                                         <input 
                                                                               onClick={this.props.handleChangeStep3ValueCheckbox}
+                                                                              id = {this.props.isChecked.boxOne}
                                                                               type="checkbox" 
-                                                                              name="checkboxOne" 
-                                                                              value={"dzieciom"}
+                                                                              name="checkbox" 
+                                                                              value={"dzieciom"}                                                                          
                                                                               />
                                                                   </label>
                                                                               
@@ -57,9 +57,10 @@ class Form_step3 extends Component{
                                                                   <label className="checkbox_content"><p className="tekst_alwaysOn">samotnym matkom</p>
                                                                         <input
                                                                               onClick={this.props.handleChangeStep3ValueCheckbox}
+                                                                              id = {this.props.isChecked.boxTwo}
                                                                               type="checkbox" 
-                                                                              name="checkboxTwo" 
-                                                                              value={"samotnym matkom"}
+                                                                              name="checkbox" 
+                                                                              value={"samotnym matkom"}                                               
                                                                               />
                                                                   </label>
                                                                         
@@ -68,9 +69,10 @@ class Form_step3 extends Component{
                                                                   <label className="checkbox_content"><p className="tekst_alwaysOn">bezdomnym</p>
                                                                         <input
                                                                               onClick={this.props.handleChangeStep3ValueCheckbox}
+                                                                              id = {this.props.isChecked.boxTree}
                                                                               type="checkbox" 
-                                                                              name="checkboxTree" 
-                                                                              value={"bezdomnym"}
+                                                                              name="checkbox" 
+                                                                              value={"bezdomnym"}                                                                            
                                                                               />  
                                                                   </label>
                                                             </li>
@@ -78,9 +80,11 @@ class Form_step3 extends Component{
                                                                   <label className="checkbox_content"><p className="tekst_alwaysOn">niepełnosprawnym</p>
                                                                         <input
                                                                               onClick={this.props.handleChangeStep3ValueCheckbox}
+                                                                              id = {this.props.isChecked.boxFour}
                                                                               type="checkbox" 
-                                                                              name="checkboxFour" 
+                                                                              name="checkbox" 
                                                                               value={"niepełnosprawnym"}
+
                                                                               />
                                                                         
                                                                         </label>
@@ -90,8 +94,9 @@ class Form_step3 extends Component{
                                                                   <label className="checkbox_content"><p className="tekst_alwaysOn">osobom starszym</p>
                                                                         <input
                                                                               onClick={this.props.handleChangeStep3ValueCheckbox}
+                                                                              id = {this.props.isChecked.boxFive}
                                                                               type="checkbox" 
-                                                                              name="checkboxFive" 
+                                                                              name="checkbox" 
                                                                               value={"osobom starszym"}
                                                                         />        
                                                                   </label>

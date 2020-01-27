@@ -6,8 +6,8 @@
       background-image: url("../../../assets/assets/Form_Hero_Image.jpg");
       background-position: right;
       background-repeat: no-repeat;
-      background-size: border-box;
-      position: relative;           
+      background-size: cover;
+      position: relative;         
       width: 50%;
       height: 100%;
 }
@@ -16,11 +16,7 @@
       display: flex;
       flex-direction: column;
       .Header_menu_log{
-            .User_email{
-                  font-size: 14px;
-                  font-weight: bold;
-
-            }
+            
             li{
                   padding: 5px 10px;
                   display: flex;
@@ -32,7 +28,7 @@
       .Header_form{
             width: 80%;
             height: 70%;
-            margin-top: 80px;
+            margin-top: 150px;
             justify-content: center;
             align-items: center;
             h1{
@@ -114,5 +110,7 @@
       }
 }
 .User_email{
-      
+      font-size: 14px;
+      font-weight: bold;
+
 }

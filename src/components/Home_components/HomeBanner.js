@@ -15,7 +15,7 @@ class HomeBanner extends Component{
                               <HomeHeader/>
                               <div className="Header_menu_title">                                      
                                     <h1>Zacznij pomagać!<br></br> Oddaj niechciane rzeczy w zaufane ręce</h1>
-                                    <span className="border_decoration"><img src={decSvg}/></span>
+                                    <span className="border_decoration"><img alt="line decoration" src={decSvg}/></span>
                                     
                                     <div className="Header_menu_buttons">
                                           <a href="/logowanie"><p>ODDAJ RZECZY</p></a>

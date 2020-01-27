@@ -4,33 +4,47 @@ import Form_step3 from "../Form_components/Form_step3"
 import Form_step4 from "../Form_components/Form_step4"
 import Form_step5 from "../Form_components/Form_step5"
 import Form_step6 from "../Form_components/Form_step6"
+import myFirebase from "../../Firebase/fbconfig"
+import firebase from "firebase";
 
 
 class Form_Window extends Component{
-      state={
-            isActive: 1,
-            valueRadio: "",
-            valueBags:"",
-            valueCity:"",
-            valueCheckbox:"",
-            valueNameOrganization:"",
-            street:"",
-            city:"",
-            postCode:"",
-            phone:"",
-            date:"",
-            time:"",
-            note:""       
+      
+            state={
+                  isActive: 3,
+                  valueRadio: "",
+                  valueBags:"",
+                  valueCity:"",
+                  valueCheckbox: [],
+                  isChecked : [
+                        {boxOne: false},
+                        {boxTwo: false},
+                        {boxTree: false},
+                        {boxFour: false},
+                        {boxFive: false}
+                  ],
+                  valueNameOrganization:"",
+                  street:"",
+                  city:"",
+                  postCode:"",
+                  phone:"",
+                  date:"",
+                  time:"",
+                  note:""  ,
+                  error_street:"",  
+                  error_city:"",  
+                  error_postCode:"",  
+                  error_phone:"" ,
+                  error_date:""  
+            }
+           
+            
 
-      }
       handleChangeStep1 = e=>{
             this.setState({
                   // [e.target.name]:e.target.value
                   valueRadio:e.currentTarget.value
-            });
-            console.log(this.state.valueRadio)
-               
-            
+            });         
       };
 
       handleClickFormStepNext=e=>{
@@ -89,9 +103,31 @@ class Form_Window extends Component{
 
                   handleChangeStep3ValueCheckbox = e => {
                         const {valueCheckbox}= this.state
-                        this.setState({
-                              valueCheckbox:e.currentTarget.value
-                        });
+                        if(e.target.checked){
+                              this.setState({
+                                    valueCheckbox: [...this.state.valueCheckbox,e.target.value],
+                              },()=>{
+                                    console.log(this.state.valueCheckbox)
+                              })
+                        }else if (e.target.checked === valueCheckbox.value){
+                              this.setState({
+                                    valueCheckbox: []
+                              })
+                        }
+                        
+
+                        // const {valueCheckbox}= this.state
+                        // let list = Array.from(this.state.valueCheckbox)
+                        // list.push(e.currentTarget.value)
+                        // let newArray = list.filter(function(item ,pos, self){
+                        //        return self.indexOf(item) === pos
+                        //  })
+                        // this.setState({
+                        //       valueCheckbox: newArray,
+                              
+                        // });
+                        
+                        console.log(e.currentTarget)
                         
                   };  
                   
@@ -114,9 +150,6 @@ class Form_Window extends Component{
                      handleFormPrevious3 = e =>{
                         e.preventDefault();
                         const{valueCity,valueCheckbox,valueNameOrganization} = this.state;
-                        console.log(this.state.valueCity)
-                        console.log(this.state.valueCheckbox)
-                        console.log(this.state.isActive)
                         this.setState({
                               isActive:2
                               })                         
@@ -127,47 +160,41 @@ class Form_Window extends Component{
                         handleChangeStep4street = e =>{
                               const {street} = this.state
                               this.setState({
-                                    street:e.target.value
+                                    street:e.target.value,
+                                    
                               })
                         }
-
                         handleChangeStep4City = e =>{
                               const {city}= this.state
                               this.setState({
                                     city:e.target.value
-                              });
-                              console.log(this.state.city)
-                              console.log(this.state.isActive +"isActive")
-                        };  
-
+                              });          
+                        }
                         handleChangeStep4postCode = e =>{
                               const {postCode} = this.state
                               this.setState({
                                     postCode:e.target.value
                               })
-                        }
-
+                               
+                        }    
                         handleChangeStep4phone = e =>{
                               const {phone} = this.state
                               this.setState({
                                     phone:e.target.value
                               })
                         }
-
                         handleChangeStep4date = e =>{
                               const {date} = this.state
                               this.setState({
                                     date:e.target.value
                               })
                         }
-
                         handleChangeStep4time = e =>{
                               const {time } = this.state
                               this.setState({
                                     time:e.target.value
                               })
                         }
-
                         handleChangeStep4note = e =>{
                               const {note} = this.state
                               this.setState({
@@ -175,19 +202,79 @@ class Form_Window extends Component{
                               })
                         }
 
+                        
                         handleClickFormStepNext4= e=>{
-                              // e.preventDefault();
+                              e.preventDefault();
+                              if(this.state.street === ""){
+                                    this.setState({
+                                          error_street: "Pole nie może być puste"
+                                           
+                                  }) 
+                              }else {
+                                    this.setState({
+                                    error_street: ""
+                                     
+                                    })  
+                              }
+                              if(this.state.city ===""){
+                                    this.setState({
+                                          error_city: "Pole nie może być puste"
+                                    })
+                              }else {
+                                    this.setState({
+                                          error_city: "" 
+                                    })
+                              }if(this.state.postCode === ""){
+                                    this.setState({
+                                          error_postCode: "Błędny format"
+                                    })
+                              }else {
+                                    this.setState({
+                                          error_postCode: ""
+                                    })
+                              }if(this.state.phone=== ""){
+                                    this.setState({
+                                          error_phone: "Wpisz poprawny numer telefonu"
+                                    })
+                              }else {
+                                    this.setState({
+                                          error_phone:""
+                                    })
+                              }if (this.state.date ===""){
+                                    this.setState({
+                                          error_date: "Wpisz poprawną date dostawy"
+                                    })
+                                    
+                              }else {
+                                    this.setState({
+                                          error_date: ""
+                                    })
+                              }
+                              
+                              if(this.state.error_city === "" && this.state.error_date === "" && this.state.error_postCode === "" && this.state.error_phone ===""){
                                     this.setState({
                                           isActive:5
-                                          })
-                  
-                           } 
+                                          }) 
+                                  
+                              } else {
+                                    this.setState({
+                                          isActive:4
+                                          }) 
+
+                              }
+                              
+                        }
+
+
                            handleFormPrevious4 = e =>{
                               e.preventDefault();
                               this.setState({
                                     isActive:3
-                                    })                         
+                                    }) 
+                                                           
                               } 
+
+                               
 
                      // Form 5 events  
 
@@ -202,9 +289,6 @@ class Form_Window extends Component{
                      handleFormPrevious5 = e =>{
                         e.preventDefault();
                         const{valueCity,valueCheckbox,valueNameOrganization} = this.state;
-                        console.log(this.state.valueCity)
-                        console.log(this.state.valueCheckbox)
-                        console.log(this.state.isActive)
                         this.setState({
                               isActive:4
                               })                         
@@ -315,6 +399,9 @@ class Form_Window extends Component{
                   valueCity={this.state.valueCity}
                   valueCheckbox={this.state.valueCheckbox} 
                   valueNameOrganization = {this.state.valueNameOrganization}
+                  isChecked = {this.state.isChecked}
+                       
+                        
                   />
             }else if (this.state.isActive ===4){
                   return <Form_step4
@@ -326,6 +413,7 @@ class Form_Window extends Component{
                   handleChangeStep4time = {this.handleChangeStep4time}
                   handleChangeStep4note = {this.handleChangeStep4note}
                   handleClickFormStepNext4 = {this.handleClickFormStepNext4}
+                  // handleValidationForm4 = {this.handleValidationForm4}
                   handleFormPrevious4 = {this.handleFormPrevious4}
                   street={this.state.street}
                   city={this.state.city}
@@ -334,6 +422,11 @@ class Form_Window extends Component{
                   date={this.state.date}
                   time={this.state.time}
                   note={this.state.note}
+                  error_street={this.state.error_street}  
+                  error_city={this.state.error_city}    
+                  error_postCode={this.state.error_postCode}   
+                  error_phone={this.state.error_phone}  
+                  error_date={this.state.error_date}   
                   />
             }else if (this.state.isActive ===5){
                   return <Form_step5

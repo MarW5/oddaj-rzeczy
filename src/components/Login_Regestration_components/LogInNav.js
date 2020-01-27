@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import { Link as ScrollLink, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import {Link, Route, NavLink, } from 'react-router-dom';
+import { Link as ScrollLink} from 'react-scroll'
+import {Link,  NavLink, } from 'react-router-dom';
 import decSvg from '../../assets/assets/Decoration.svg'
-
+import myFirebase from "../../Firebase/fbconfig"
 
 class LogInNav extends Component{
+
+
+      logout(){
+            myFirebase.auth().signOut();
+      }
+
+
       render(){
             const activeStyle = {
                   border:'1px solid $color4'
@@ -17,12 +24,12 @@ class LogInNav extends Component{
             <div className="Header_menu_banner">
             <div className="Header_menu">
                         <ul className="Header_logg_option">
-                              <li><p className="User_email">Cześć krzysztof@gmail.com</p></li>
-                              <a href="/oddaj-rzeczy"><p>ODDAJ RZECZY</p></a>
-                              <li><Link to="/wylogowano">Wyloguj</Link></li>
+                              <li className="User_email"><p >Cześć {this.props.user}</p></li>
+                              <li><Link to="/oddaj-rzeczy">ODDAJ RZECZY</Link></li>
+                              <li onClick={this.logout}><Link to="/wylogowano">Wyloguj</Link></li>
                         </ul>
 
-                              <ul className="Header_logg_option Header_menu_nav">
+                              <ul className=" Header_menu_nav">
                                     <li><NavLink exact to="/" activeStyle={activeStyle}>Start</NavLink></li>
                                     <li><ScrollLink activeClass="active" to="FourSteps" spy={true} smooth={true} duration={500}>O co chodzi?</ScrollLink></li>
                                     <li><ScrollLink activeClass="active" to="AboutUs" spy={true} smooth={true} duration={500}>O nas</ScrollLink></li>
@@ -33,11 +40,11 @@ class LogInNav extends Component{
                   </div>
                   <div className="Header_menu_title">                                      
                         <h1>Zacznij pomagać!<br></br> Oddaj niechciane rzeczy w zaufane ręce</h1>
-                        <span className="border_decoration"><img src={decSvg}/></span>
+                        <span className="border_decoration"><img alt="decoration line" src={decSvg}/></span>
                         
                         <div className="Header_menu_buttons">
-                              <a href="/logowanie"><p>ODDAJ RZECZY</p></a>
-                              <a href="/logowanie"><p>ZORGANIZUJ ZBIÓRKĘ</p></a>
+                              <a href="/oddaj-rzeczy"><p>ODDAJ RZECZY</p></a>
+                              <a href="/oddaj-rzeczy"><p>ZORGANIZUJ ZBIÓRKĘ</p></a>
                         </div>
                   </div>
             </div>
