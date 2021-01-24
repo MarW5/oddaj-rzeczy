@@ -6,6 +6,7 @@ import FourSteps from "./Home_components/FourSteps"
 import AboutUs from "./Home_components/AboutUs"
 import HelpPeople from "./Home_components/HelpPeople"
 import Contact from "./Home_components/Contact"
+import Footer from "./Home_components/Footer"
 
 
 class Home extends Component{
@@ -18,6 +19,7 @@ class Home extends Component{
                         <AboutUs/>
                         <HelpPeople/>
                         <Contact/>
+                        <Footer/>
                         
                   </>
             )

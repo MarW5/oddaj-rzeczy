@@ -1,51 +1,65 @@
 .FourSteps{
   width: 100%;
-  margin-top:50px;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
     h2{
+      width: 100%;
+      text-align: center;
       margin-bottom:20px;
-      font-size: 38px;
+      font-size: 2.5rem;
       color: $color5 ;
     }
     .FourSteps_content{
       width: 100%;
+      max-width: 1800px;
       height: 320px;
-      margin-top: 30px;
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       list-style-type: none;
-      background-color: $color1;
-      h3{
-        color: $color4;
-        position: relative;
-        margin-top:10px;
-
-      }
-      h3::before{
-        content: "";
-        position: absolute;
-        left: 30px;
-        bottom: -10px;
-        height: 1px;
-        width: 70px;
-        border-bottom: 1px solid $color4;
-      }
-      li{
-        width: 130px;
+      li.things_to_gives{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
         text-align: center;
         color: $color4;
-        padding: 40px;
-        margin-left: 50px;
-      }
-      p{
-        margin-top:20px;
-      }
+        .things_icons{
+          height: 80px; 
+          img{
+            height: 80px;
+          }
+        }
+          h3{
+            color: $color4;
+            position: relative;
+            margin-top:10px;
+            width: 50%;
+            display: block;
+            text-align: center;
+            height: 30px;
+          }
+          h3::before{
+            content: "";
+            position: absolute;
+            left: 0px;
+            bottom: -10px;
+            height: 1px;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid $color4;
+          }
+          p{
+            margin-top:20px;
+            height: 50px;
+          }
+      } 
     }
-    a{
+    a.gives_things_button{
       margin-top:30px;
       font-size: 36px;
       font-weight: 300;
@@ -57,4 +71,11 @@
       padding: 20px 40px;
       width: 200px;
     }
+}
+
+.FourSteps_background{
+  width: 100%;
+  background-color: $color1;
+  display: flex;
+  justify-content: center;
 }

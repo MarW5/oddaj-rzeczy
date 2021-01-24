@@ -79,7 +79,7 @@ class HelpPeople extends Component{
             
             <div name="HelpPeople" className={"HelpPeople"}>
                     <h3>Komu pomagamy?</h3>
-                    <span><img alt="dec_elem"src={decSvg}/></span>
+                    <span className= "border_decoration"><img alt="dec_elem"src={decSvg}/></span>
                     <div className="HelpPeople_filter">
                         <a onClick ={this.handlerClick1}>Fundacjom</a>
                         <a onClick ={this.handlerClick2}>Organizacją pozarządowym</a>

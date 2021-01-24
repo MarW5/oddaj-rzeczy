@@ -10,14 +10,16 @@ class FourSteps extends Component{
             return(
                   <div name="FourSteps" className={"FourSteps"}>
                         <h2>Wystarczą 4 proste kroki</h2>
-                        <span><img alt="dec_elem" src={decSvg}/></span>
-                        <ul className={'FourSteps_content'}>
-                            <li><span><img alt="T_shirt" src={Icon1}/></span><h3>Wybierz rzeczy</h3><p>ubrania, zabawki, sprzęt i inne</p></li>
-                            <li><span><img alt="Bag_icon" src={Icon2}/></span><h3>Spakuj je</h3><p>skorzystaj z worków na śmieci</p></li>
-                            <li><span><img alt="loupe" src={Icon3}/></span><h3>Zdecyduj komu chcesz pomóc</h3><p>swybierz zaufane miejsce</p></li>
-                            <li><span><img alt="courier" src={Icon4}/></span><h3>Zamów kuriera</h3><p>kurier przyjedzie w dogodnym terminie</p></li>
-                        </ul>
-                        <a href="/logowanie">Oddaj rzeczy</a>
+                        <span className="border_decoration"><img alt="dec_elem" src={decSvg}/></span>
+                        <div className="FourSteps_background">
+                              <ul className={'FourSteps_content'}>
+                              <li className="things_to_gives"><span className="things_icons"><img alt="T_shirt" src={Icon1}/></span><h3>Wybierz rzeczy</h3><p>ubrania, zabawki, sprzęt i inne</p></li>
+                              <li className="things_to_gives"><span className="things_icons"><img alt="Bag_icon" src={Icon2}/></span><h3>Spakuj je</h3><p>skorzystaj z worków na śmieci</p></li>
+                              <li className="things_to_gives"><span className="things_icons"><img alt="loupe" src={Icon3}/></span><h3>Zdecyduj komu chcesz pomóc</h3><p>swybierz zaufane miejsce</p></li>
+                              <li className="things_to_gives"><span className="things_icons"><img alt="courier" src={Icon4}/></span><h3>Zamów kuriera</h3><p>kurier przyjedzie w dogodnym terminie</p></li>
+                              </ul>
+                        </div>
+                        <a className="gives_things_button" href="/logowanie">Oddaj rzeczy</a>
                   </div>
             )
       }
