@@ -1,46 +1,74 @@
  .Header_menu{
             width: 100%;
-            height: 90px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             color: $color5;
-
             .Header_logg_option{
                   display: flex;
                   justify-content: flex-end;
                   list-style: none;
-                  font-size: 14px;
-                  a{
-                        text-decoration: none;
-                        color: $color5;
-                        padding: 10px 15px;
-                        &:hover{
-                              border:1px solid $color3;
-                              cursor: pointer;
-                        }    
+                  font-size: 1rem;
+                  li{
+                        margin-left: 2px;
+                        width: 20%;
+                        padding:10px 20px;
+                        a{
+                              text-decoration: none;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              color: $color5;
+                              width: 100%;
+                              height: 40px;
+                              &:hover{
+                                    border: 1px solid $color3;
+                                    cursor: pointer;
+                              }    
+                        }
                   }
             }
             .Header_menu_nav{
-                  font-size: 18px;
+                  font-size: 1rem;
                   display: flex;
                   justify-content: space-between;
                   align-items: center;
-                  li{
+                  width: 100%;
+                  margin-top: 10px;
+                  li.menu_nav_link{
                         text-decoration: none;
                         padding:10px 20px;
-                      a{
-                        text-decoration: none;
-                        color:$color5;
-                      }  
+                        width: 20%;
+                        margin: 1px;
                         &:hover{
                               border:1px solid $color4;
                               cursor: pointer;
-                        }  
+                        } 
+                      a.nav_link_menu{
+                        text-decoration: none;
+                        color:$color5;
+                        text-align: center;
+                        width: 100%;
+                        height: 30px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &:visited{
+                              color:$color5;
+                        }
+                      }      
                   }
             }
             
 }
 
-.User_email{
-}
+@media only screen and (max-width: 600px) {
+      .Header_menu_nav{
+            li.menu_nav_link{
+                  padding: 5px 10px;
+            }
+      }
+      
+      
+    }

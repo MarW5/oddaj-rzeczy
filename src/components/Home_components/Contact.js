@@ -119,10 +119,9 @@ class Contact extends Component{
                  
                 <div className="Contact">
                     
-                    <img alt="background" className="Bg_clothes" src={BgContact}/>  
                     <div className="Contact_content ">
                         <h3>Skontaktuj się z nami</h3>
-                        <span><img alt="decoration_element" src={decSvg}/></span>
+                        <span className="border_decoration"><img alt="decoration_element" src={decSvg}/></span>
                         <p className=" Sukcess_msg">{sukcess_msg}</p>
                         <div className="form_box">
                         <div className="form_name_email">
@@ -145,7 +144,7 @@ class Contact extends Component{
                         <button className="Form_btn" onClick={this.handleFormSubmit}>Wyślij</button>
                         </div>
                     </div>  
-                    <Footer/>
+                    
                 </div>
                 
             

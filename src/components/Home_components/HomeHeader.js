@@ -17,11 +17,11 @@ class HomeHeader extends Component{
                         </ul>
 
                               <ul className=" Header_menu_nav">
-                                    <li><NavLink exact to="/" activeStyle={activeStyle}>Start</NavLink></li>
-                                    <li><ScrollLink activeClass="active" to="FourSteps" spy={true} smooth={true} duration={500}>O co chodzi?</ScrollLink></li>
-                                    <li><ScrollLink activeClass="active" to="AboutUs" spy={true} smooth={true} duration={500}>O nas</ScrollLink></li>
-                                    <li><ScrollLink activeClass="active" to="HelpPeople" spy={true} smooth={true} duration={500}>Fundacja i organizacje</ScrollLink></li>
-                                    <li><ScrollLink activeClass="active" to="Contact" spy={true} smooth={true} duration={500}>Kontakt</ScrollLink></li>
+                                    <li className="menu_nav_link"><NavLink exact to="/" activeStyle={activeStyle} className="nav_link_menu">Start</NavLink></li>
+                                    <li className="menu_nav_link"><ScrollLink activeClass="active" to="FourSteps" spy={true} smooth={true} duration={500} className="nav_link_menu">O co chodzi?</ScrollLink></li>
+                                    <li className="menu_nav_link"><ScrollLink activeClass="active" to="AboutUs" spy={true} smooth={true} duration={500} className="nav_link_menu">O nas</ScrollLink></li>
+                                    <li className="menu_nav_link"><ScrollLink activeClass="active" to="HelpPeople" spy={true} smooth={true} duration={500} className="nav_link_menu">Fundacja i organizacje</ScrollLink></li>
+                                    <li className="menu_nav_link"><ScrollLink activeClass="active" to="Contact" spy={true} smooth={true} duration={500} className="nav_link_menu">Kontakt</ScrollLink></li>
                                                 
                               </ul>
                   </div>
