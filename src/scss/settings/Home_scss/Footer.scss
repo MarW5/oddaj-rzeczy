@@ -7,7 +7,6 @@
       span{
             width: 10%;
             display: flex;
-            align-self: flex-start;
             flex-grow: 1;
             align-self: flex-end;
             justify-content: space-evenly;
@@ -21,4 +20,13 @@
             justify-content: center;
       }   
       
+}
+@media only screen and (max-width: 500px) {
+      .Footer_Content p{
+            display: none;
+            
+      }
+      .Footer_Content span{
+            justify-content: flex-end;
+      }
 }

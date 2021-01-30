@@ -41,3 +41,22 @@
       }
         
 }
+
+@media only screen and (max-width: 500px) {
+      .Home_Three_Columns{
+            flex-direction: column;
+            height: 100%;
+            .single_element{
+                  width: 100%;
+                  margin: 10px;
+                  span{
+                        font-size: 4em;
+                        font-weight: 500;
+                  }
+                  p{
+                        width: 100%;
+                  }
+            }
+      }
+
+}

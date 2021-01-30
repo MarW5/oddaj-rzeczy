@@ -24,20 +24,28 @@
             color: $color5;
       }
       .HelpPeople_filter{
-            width: 50%;
+            width: 100%;
             margin-top: 1%;
             display: flex;
             justify-content: center;
             align-items: center;
+            max-width: 1000px;
             a{
                   width: 208px;
+                  height: 50px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
                   text-align: center;
                   text-decoration: none;
                   color: $color5;
+                  box-shadow: 0 1px 1px 1px #f0f1f1;
+                  margin-top: 5px;
                   font-size: 24px;
                   margin-right: 30px;
                   margin-left: 30px;
                   padding: 20px;
+                  border: 1px solid white;
                   &:hover{
                         border:1px solid $color4;
                         cursor: pointer;
@@ -101,4 +109,37 @@
 
 .Btn_clicked{
       border: 1px solid $color6;
+}
+
+@media only screen and (max-width: 500px) {
+
+      .HelpPeople{
+            margin-top: 15%;
+            h3{
+                  margin-bottom: 5%;
+            }
+            .HelpPeople_filter{
+                  width: 100%;
+                  flex-direction: column;
+            }
+            .HelpPeople_description{
+                  width: 90%;
+                  font-size: 1.1em;
+                  line-height: 1.4;
+            }
+            .HelpPeople_table{
+                  width: 90%;
+                  .Fundation_name .Elements_table{
+                        margin-top: 10%;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        p{
+                              display: flex;
+                              width: 50%;
+                              height: 80px;
+                        }
+                  }
+            }
+      }
+
 }

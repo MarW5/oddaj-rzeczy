@@ -60,7 +60,7 @@
       } 
     }
     a.gives_things_button{
-      margin-top:30px;
+      margin-top: 10%;
       font-size: 36px;
       font-weight: 300;
       color: $color5;
@@ -78,4 +78,25 @@
   background-color: $color1;
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+
+  .FourSteps{
+    h2{
+      font-size: 2rem;
+    }
+    .FourSteps_content{
+      flex-direction: column;
+      height: 100%;
+      li.things_to_gives{
+        width: 100%;
+      }
+    }
+    a.gives_things_button{
+      font-size: 28px;
+      padding: 20px 35px;
+    }
+  }
+
 }

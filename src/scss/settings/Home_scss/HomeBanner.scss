@@ -27,7 +27,6 @@
                   justify-content: center;
                   align-items: center;
                   color: $color5;
-
                   h1{
                         width: 100%;
                         text-align: center;
@@ -37,8 +36,7 @@
                         margin-bottom: 30px;
                         font-size: 2.5em;
       
-                  }
-                  
+                  }    
             }
            
             .Header_menu_buttons{
@@ -73,6 +71,13 @@
       height: 35px;
       margin-bottom: 3%;
 }
+.mobile_menu{
+      display:none;
+}
+.hamburger_menu{
+      width: 30px;
+      height: 30px;
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -82,7 +87,9 @@
                   width: 100%;
             }
       }
-            
+            .Header_menu{
+                  display: flex;
+            }
             .Header_background{
                   // background-image: url("../../../assets/assets/Home-Hero-Image.jpg");
                   // background-position: right;
@@ -97,10 +104,20 @@
 
       .Home_Header .Header_menu_banner .Header_menu_title{
             width: 100%;
-            margin: 56% 0;
+            margin: 43% 0;
+            h1{
+                  font-size: 2em;
+            }
       }
-      .Home_Header .Header_menu_banner .Header_menu_buttons a{
-            font-size: 1.8em;
+      .Home_Header .Header_menu_banner .Header_menu_buttons {
+            width: 90%; 
+      a{
+            width: 40%;
+            font-size: 1.4em;
+            padding: 10px;
+            margin: 5px;
+            height: 100px;
       }
+}
       
 }

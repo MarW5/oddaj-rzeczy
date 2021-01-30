@@ -125,3 +125,32 @@
             margin-bottom: 20px;
             color: rgb(77, 192, 77);
       }
+
+
+@media only screen and (max-width: 500px) {
+
+      .Contact{
+            height: 100%;
+            background-image: none;
+            .Contact_content {
+                  width: 100%;
+                  h3{
+                        font-size: 2em; 
+                  }
+                  .form_box{
+                    width: 100%;  
+                    .form_name_email{
+                          width: 90%;
+                    } 
+                    .massage_toUs{
+                        width: 90%;
+                    }
+                    .Form_btn{
+                        margin: 10px 0;
+                        align-self: center; 
+                    }
+                  }
+            }
+      }
+
+}
