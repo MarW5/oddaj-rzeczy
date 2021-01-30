@@ -9,7 +9,7 @@ class AboutUs extends Component{
                   <div name="AboutUs" className={'AboutUs'}>
                         <div className={'aboutUs_text'}>
                         <div className="aboutUs_text_box">
-                        <h3>O nas</h3><span><img alt="Decoration" src={decSvg}/></span><p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+                        <h3>O nas</h3><span className="border_decoration"><img alt="Decoration" src={decSvg}/></span><p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
                         <span className={"signature_box"}><img alt="Signature" src={signature}/> </span>
                         </div>
                         </div>
