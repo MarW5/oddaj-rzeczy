@@ -25,11 +25,11 @@ class HomeHeader extends Component{
             if(isMobile){
                   return(
                         <div className="Header_menu">
+                              <span className ="hamburger_menu" onClick = {this.hamburgerMenu}><img src= {menuHamburger} alt="menu_hamburger"/></span>
                               <ul className="Header_logg_option">
                                     <li><Link to="/logowanie">Zaloguj</Link></li>
                                     <li><Link to="/rejestracja">Załóż konto</Link></li>
                               </ul>
-                              <span className ="hamburger_menu" onClick = {this.hamburgerMenu}><img src= {menuHamburger} alt="menu_hamburger"/></span>
                               {this.state.mobile ? <ul className=" Header_menu_nav mobile_menu">
                                     <li className="menu_nav_link"><NavLink exact to="/" activeStyle={activeStyle} className="nav_link_menu">Start</NavLink></li>
                                     <li className="menu_nav_link"><ScrollLink activeClass="active" to="FourSteps" spy={true} smooth={true} duration={500} className="nav_link_menu">O co chodzi?</ScrollLink></li>

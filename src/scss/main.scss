@@ -39,7 +39,12 @@ body{
       background-size: cover;
       box-sizing: content-box;
       background-position: center;
+}
+
+@media only screen and (max-width: 500px) {
+     #root{
       overflow: auto;
+     }
 }
 
 

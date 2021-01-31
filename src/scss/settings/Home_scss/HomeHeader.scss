@@ -66,9 +66,57 @@
 }
 
 @media only screen and (max-width: 500px) {
-      .Header_menu_nav{
-            li.menu_nav_link{
-                  padding: 5px 10px;
+      .Home_Header{
+            .Header_menu .Header_menu_nav{
+                  justify-content: start;
+                        li.menu_nav_link{
+                              padding: 20px;
+                              color: $color1;
+                              width: 100%;
+                              a.nav_link_menu{
+                              color: $color1;
+                              &:active{
+                                    color: red;
+                                    }
+                              }
+                        }
+                  }       
+    
+      .mobile_menu{
+            background-color: black;
+            position: absolute;
+            top: 40px;
+            flex-direction: column;
+            height: 100vh;
+            animation: 0.5s slideIn forwards;
+
+      }
+      }
+
+      @keyframes appear {
+            0% {
+              opacity: 0;
             }
-      }       
-    }
+            100% {
+              opacity: 1;
+            }
+          }
+          
+          @keyframes slideIn {
+            0% {
+              transform: translateX(-2%);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+          
+          @keyframes shrink {
+            0% {
+              width: 95%;
+            }
+            100% {
+              width: 90%;
+            }
+          }
+}

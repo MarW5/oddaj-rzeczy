@@ -64,6 +64,19 @@
             }
             
       }
+      .mobile_menu{
+            background-color: black;
+            position: absolute;
+            top: 40px;
+            justify-content: center;
+            flex-direction: column;
+            li.menu_nav_link{
+                  a{
+                        $color1 :#F0F1F1;
+                  }
+                  
+            }
+      }
 }
 .border_decoration{
       width: 100%;
@@ -71,12 +84,12 @@
       height: 35px;
       margin-bottom: 3%;
 }
-.mobile_menu{
-      display:none;
-}
+
 .hamburger_menu{
+      position: absolute;
       width: 30px;
       height: 30px;
+      margin: 10px;
 }
 
 
@@ -85,10 +98,18 @@
             width: 100%;
             .Header_logg_option{
                   width: 100%;
+                  li{
+                        padding: 5px 15px;
+                        a{
+                              font-size: 14px;
+                        }
+                  }
             }
       }
             .Header_menu{
+                  position: relative;
                   display: flex;
+                  flex-direction: row;
             }
             .Header_background{
                   // background-image: url("../../../assets/assets/Home-Hero-Image.jpg");
@@ -111,13 +132,13 @@
       }
       .Home_Header .Header_menu_banner .Header_menu_buttons {
             width: 90%; 
-      a{
+             a{
             width: 40%;
             font-size: 1.4em;
             padding: 10px;
             margin: 5px;
             height: 100px;
+             }
       }
-}
       
 }
