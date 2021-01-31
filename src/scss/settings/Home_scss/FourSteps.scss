@@ -83,14 +83,22 @@
 @media only screen and (max-width: 500px) {
 
   .FourSteps{
+    margin-top: 10%;
     h2{
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .FourSteps_content{
       flex-direction: column;
       height: 100%;
       li.things_to_gives{
         width: 100%;
+        margin-top:10px;
+        .things_icons{
+          height: 65px;
+         img{
+          height: 70px;
+        }
+      }
       }
     }
     a.gives_things_button{
