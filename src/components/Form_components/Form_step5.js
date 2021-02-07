@@ -5,10 +5,6 @@ import Icon4 from "../../assets/assets/Icon-4.svg"
 class Form_step5 extends Component{
 
       render(){
-            // const {valueCheckbox}= this.props
-            // const checkboxArray = valueCheckbox.map((item)=>{
-            //       <p>{item}</p>
-            // })
             return (
                   
                   <div className="Form_content">

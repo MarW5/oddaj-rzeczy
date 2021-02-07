@@ -10,7 +10,7 @@ class Form_step4 extends Component{
                                           <p>Podaj adres oraz termin odbioru rzeczy.</p>
                         </div>
                         <div className="Form_box">
-                              <p>Krok 4/4</p>  
+                              <p className="Steps_number">Krok 4/4</p>  
                               <h3 className="text_local">Podaj adres oraz termin odbioru rzecz przez kuriera</h3>
                               <div className="information">
                                     <div className="information_content">

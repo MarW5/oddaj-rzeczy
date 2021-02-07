@@ -4,31 +4,24 @@
       flex-direction: column;
       justify-content: space-around;
       .text_local{
+            width: 100%;
             font-size: 36px;
+            padding-left: 2%;
       }
 }
 
 .Numbers_of_bags{
       width: 100%;
-      height: 200px;
-      margin-bottom: 60px;
+      height: 45vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      
-      p{
-            text-align: center;
-            margin: 0px;
-      }
-
+      justify-content: space-evenly;
 }
 .Select_content{
+      padding-left: 2%;
       width: 400px;
-      overflow: hidden;
       display: flex;
       align-items: center;
-      justify-content: center;
-      
       
       .Chosse_numbers{
             width: 220px;
@@ -41,27 +34,19 @@
             -moz-appearance:none;
             appearance: none;
             background-color: #ececea!important;
-            
-            
             background: url("../../../assets/assets/Icon-Arrow-Down.svg") 96% / 15% no-repeat #EEE;
-            &:hover{
+            &:focus{
                   background: url("../../../assets/assets/Icon-Arrow-Up.svg") 96% / 15% no-repeat #EEE;
             }
-
-            // option{
             
-            //       font-weight: 300;
-            //       margin-left: 10px;
-            // }
       }
 }
 
 
 .buttons_step2{
-      width: 100%;
-      height: 90px;
-      align-self: flex-end;
-      margin-top:20px;
+      width: 40%;
+      margin-left: 2%;
+      height: 10%;
       a{
             width: 180px;
             height: 80px;
@@ -70,7 +55,7 @@
             border: 0.75px solid $color5;
             cursor:pointer;
             &:first-of-type{
-                  margin-right: 50px;
+                  margin-right: 5%;
             }
       }
       

@@ -13,10 +13,6 @@ class Form_step2 extends Component{
             
       }
 
-      
-      
-      
-      
       render(){     
                   return(
                         <div className="Form_content">
@@ -25,7 +21,7 @@ class Form_step2 extends Component{
                                           <p>Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.</p>
                                     </div>
                                     <div className="Form_box step2_box">
-                                          <p>Krok 2/4</p>
+                                          <p className="Steps_number">Krok 2/4</p>
                                           <label className="Numbers_of_bags">
                                           <h3 className="text_local">Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
                                                 

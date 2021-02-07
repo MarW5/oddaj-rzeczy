@@ -23,10 +23,10 @@ class Form_step3 extends Component{
                                           <p>Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.</p>
                         </div>
                         <div className="Form_box">
-                                          <p>Krok 3/4</p>          
+                                          <p className="Steps_number">Krok 3/4</p>          
                                                 <div className="Select_content select_box_step3">
                                                 <h3 className="text_local">Lokalizacja:</h3>
-                                                      <select onChange={this.props.handleChangeStep3ValueCity} value = {this.props.valueCity} className="Chosse_numbers select_step3">
+                                                      <select onChange={this.props.handleChangeStep3ValueCity} value = {this.props.valueCity} className="Chosse_numbers">
                                                             <option name="name" value = " "> -wybierz-</option>
                                                             <option name="name" value= "Poznań"> Poznań </option>
                                                             <option name="name" value= "Warszawa"> Warszawa </option>

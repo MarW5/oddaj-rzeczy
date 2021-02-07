@@ -43,46 +43,40 @@ class Form_Window extends Component{
       handleClickFormStepNext=e=>{
             e.preventDefault();
             const{valueRadio}=this.state;
-            if(valueRadio.length === 0){
-                  this.setState({
-                        isActive:1
-                  })
-                  
-            } else {
-                  this.setState({
-                        isActive: 2
-                  })
+                  if(valueRadio.length === 0){
+                        this.setState({
+                              isActive:1
+                        })  
+                  } else {
+                        this.setState({
+                              isActive: 2
+                        })
+                  }
             }
-            }
-
 
             //Form 2 events
 
-            
-
-                  handleChangeStep2 = e =>{
-                        const {valueBags}= this.state
-                        this.setState({
-                              valueBags:e.currentTarget.value
+            handleChangeStep2 = e =>{
+                  const {valueBags}= this.state
+                  this.setState({
+                  valueBags:e.currentTarget.value
                         });
 
                   };  
 
-                  handleFormPrevious2 = e =>{
-                        e.preventDefault();
-                        this.setState({
-                              isActive:1
-                              })                         
-                        }  
+            handleFormPrevious2 = e =>{
+                  e.preventDefault();
+                  this.setState({
+                        isActive:1
+                        })                         
+                  }  
 
-                        handleClickFormStepNext2 = e=>{
-                        this.setState({
-                              isActive:3
-                              })
+                  handleClickFormStepNext2 = e=>{
+                  this.setState({
+                        isActive:3
+                        })
 
                   } 
-
-
 
                      //Form 3 Events
 
@@ -94,17 +88,14 @@ class Form_Window extends Component{
                        
                   };  
 
-
-                 
                   handleChangeStep3ValueCheckbox = e => {
                          const removeItem =(e)=>{
                               let newArray = this.state.valueCheckbox;
                               let index = newArray.indexOf(e.target.value)
                               newArray.splice([index])  
-                        }
+                  }
 
-                        const {valueCheckbox}= this.state
-                        
+                        const {valueCheckbox}= this.state  
                         if(e.target.checked){
                               this.setState({
                                     valueCheckbox: [...this.state.valueCheckbox,e.target.value],
@@ -116,9 +107,6 @@ class Form_Window extends Component{
                                     valueCheckbox: []
                               })
                         }
-                      
-                        console.log(e.currentTarget)
-                        console.log(valueCheckbox)
                         
                   };  
                   
@@ -130,15 +118,13 @@ class Form_Window extends Component{
                   }
 
                   handleClickFormStepNext3= e=>{
-                        // e.preventDefault();
                               const{valueCity,valueCheckbox,valueNameOrganization} = this.state;
-                              
                               this.setState({
                                     isActive:4
                                     })
-            
                      } 
-                     handleFormPrevious3 = e =>{
+
+                  handleFormPrevious3 = e =>{
                         e.preventDefault();
                         const{valueCity,valueCheckbox,valueNameOrganization} = this.state;
                         this.setState({
@@ -148,48 +134,48 @@ class Form_Window extends Component{
 
                         // Form 4 events
 
-                        handleChangeStep4street = e =>{
+                  handleChangeStep4street = e =>{
                               const {street} = this.state
                               this.setState({
                                     street:e.target.value,
                                     
-                              })
-                        }
-                        handleChangeStep4City = e =>{
-                              const {city}= this.state
-                              this.setState({
-                                    city:e.target.value
+                        })
+                  }
+                  handleChangeStep4City = e =>{
+                        const {city}= this.state
+                        this.setState({
+                              city:e.target.value
                               });          
                         }
-                        handleChangeStep4postCode = e =>{
-                              const {postCode} = this.state
-                              this.setState({
-                                    postCode:e.target.value
-                              })
-                               
+                  handleChangeStep4postCode = e =>{
+                        const {postCode} = this.state
+                        this.setState({
+                              postCode:e.target.value
+                              })       
                         }    
-                        handleChangeStep4phone = e =>{
-                              const {phone} = this.state
-                              this.setState({
-                                    phone:e.target.value
+                  handleChangeStep4phone = e =>{
+                        const {phone} = this.state
+                        this.setState({
+                              phone:e.target.value
                               })
                         }
-                        handleChangeStep4date = e =>{
-                              const {date} = this.state
-                              this.setState({
-                                    date:e.target.value
+
+                  handleChangeStep4date = e =>{
+                        const {date} = this.state
+                        this.setState({
+                              date:e.target.value
                               })
                         }
-                        handleChangeStep4time = e =>{
-                              const {time } = this.state
-                              this.setState({
-                                    time:e.target.value
+                  handleChangeStep4time = e =>{
+                        const {time } = this.state
+                        this.setState({
+                              time:e.target.value
                               })
                         }
-                        handleChangeStep4note = e =>{
-                              const {note} = this.state
-                              this.setState({
-                                    note:e.target.value
+                  handleChangeStep4note = e =>{
+                        const {note} = this.state
+                        this.setState({
+                              note:e.target.value
                               })
                         }
 
@@ -252,12 +238,10 @@ class Form_Window extends Component{
                                           isActive:4
                                           }) 
 
-                              }
-                              
+                              }      
                         }
 
-
-                           handleFormPrevious4 = e =>{
+                        handleFormPrevious4 = e =>{
                               e.preventDefault();
                               this.setState({
                                     isActive:3
@@ -265,18 +249,14 @@ class Form_Window extends Component{
                                                            
                               } 
 
-                               
-
                      // Form 5 events  
 
                      handleClickFormStepNext5= e=>{
                         // e.preventDefault();
-                              
                               this.setState({
                                     isActive:6
                                     })
-            
-                     } 
+                        } 
                      handleFormPrevious5 = e =>{
                         e.preventDefault();
                         const{valueCity,valueCheckbox,valueNameOrganization} = this.state;
@@ -284,11 +264,6 @@ class Form_Window extends Component{
                               isActive:4
                               })                         
                         } 
-                    
-                     
-                     
-            
-            
       render(){
             if(this.state.isActive === 1){
                   return(
@@ -312,7 +287,7 @@ class Form_Window extends Component{
                                                             name="gender" 
                                                             value={"ubrania, które nadają się do ponownego użycia"}
                                                             />
-                                                            ubrania, które nadają się do ponownego użycia
+                                                             <p className="label-description">ubrania, które nadają się do ponownego użycia</p>
                                                       </label>
                                                 </li>
                                                 <li>
@@ -323,7 +298,7 @@ class Form_Window extends Component{
                                                             name="gender" 
                                                             value="ubrania, do wyrzucenia"
                                                             />
-                                                            ubrania, do wyrzucenia
+                                                           <p className="label-description">ubrania, do wyrzucenia</p> 
                                                       </label>
                                                 </li>
                                                 <li>
@@ -334,7 +309,7 @@ class Form_Window extends Component{
                                                             name="gender" 
                                                             value="zabawki"
                                                             />
-                                                            zabawki
+                                                            <p className="label-description">zabawki</p>
                                                       </label>
                                                 </li>
                                                 <li>
@@ -345,7 +320,7 @@ class Form_Window extends Component{
                                                             name="gender" 
                                                             value="książki"
                                                             />
-                                                            książki
+                                                            <p className="label-description">książki</p>
                                                       </label>
                                                 </li>
                                                 <li>
@@ -356,7 +331,7 @@ class Form_Window extends Component{
                                                             name="gender" 
                                                             value="inne"
                                                             />
-                                                            inne
+                                                            <p className="label-description">inne</p>
                                                       </label>
                                                 </li>
                                                 
